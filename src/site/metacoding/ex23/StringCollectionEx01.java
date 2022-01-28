@@ -2,6 +2,7 @@ package site.metacoding.ex23;
 
 public class StringCollectionEx01 {
     public static void main(String[] args) {
+        // StringBuffer 자원 동기화 적용되어 있음.
         StringBuffer sb = new StringBuffer();
         sb.append("http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?");
         sb.append(
