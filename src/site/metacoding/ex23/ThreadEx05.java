@@ -54,15 +54,15 @@ public class ThreadEx05 {
         });
         t1.start();
         t2.start();
-        while (true) {
-            if (h.x >= m.x) {
+        while (true) { // while을 돌면서 sleep를 쓰지 않으면 최대퍼포먼스를 쓰기때문에 다른 쓰레드로 넘어가지 못함.
+            if (h.x >= m.x) { // 충돌감지 할때는 같다고하면 절대 안된다. => 충돌이 안날수도 있기때문!!
                 System.out.println("================");
                 System.out.println("몬스터가 죽었어요");
                 System.out.println("게임 끝");
                 h.isActive = false;
                 m.isActive = false;
                 break;
-            } else {
+            } else { // sysout 할때도 잠깐 쉰다 => CPU에서 일하는게 아니라 모니터에서 출력하는것이라 잠깐 쉰다.
                 System.out.println("================");
                 System.out.println("게임 진행 중");
                 try {
